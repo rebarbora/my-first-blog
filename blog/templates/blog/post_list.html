@@ -14,10 +14,15 @@
         </div>
 
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2>Můj druhý příspěvek</h2>
-            <p>Tohle jsou další nesmysly, vůbec mě nenapadá,co bych tu tak měla psát. Takže tu najdete:</p>
-            <ul><li>Nesmysly</li><li>Blabla</li><li>Nic důležitého</li></ul>
-        </div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
